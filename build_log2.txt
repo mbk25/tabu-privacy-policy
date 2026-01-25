@@ -1,0 +1,76 @@
+Resolving dependencies...
+Downloading packages...
+  audioplayers 5.2.1 (6.5.1 available)
+  audioplayers_android 4.0.3 (5.2.1 available)
+  audioplayers_darwin 5.0.2 (6.3.0 available)
+  audioplayers_linux 3.1.0 (4.2.1 available)
+  audioplayers_platform_interface 6.1.0 (7.1.1 available)
+  audioplayers_web 4.1.0 (5.1.1 available)
+  audioplayers_windows 3.1.0 (4.2.1 available)
+  characters 1.4.0 (1.4.1 available)
+  confetti 0.7.0 (0.8.0 available)
+  device_info_plus 11.5.0 (12.3.0 available)
+  flutter_launcher_icons 0.13.1 (0.14.4 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  google_fonts 6.3.3 (7.0.2 available)
+  js 0.6.7 (0.7.2 available)
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  test_api 0.7.7 (0.7.9 available)
+  vibration 1.9.0 (3.1.5 available)
+  vibration_platform_interface 0.0.3 (0.1.1 available)
+Got dependencies!
+20 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'bundleRelease'...                          
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 1888 bytes (99.9% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+C:\Users\Bilal\AppData\Local\Pub\Cache\hosted\pub.dev\vibration-1.9.0\android\src\main\java\com\benjaminabel\vibration\VibrationPlugin.java:20: error: cannot find symbol
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
+                                                                           ^
+  symbol:   class Registrar
+  location: interface PluginRegistry
+Note: C:\Users\Bilal\AppData\Local\Pub\Cache\hosted\pub.dev\vibration-1.9.0\android\src\main\java\com\benjaminabel\vibration\VibrationPlugin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 error
+3 warnings
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':vibration:compileReleaseJavaWithJavac'.
+> Compilation failed; see the compiler output below.
+  Note: C:\Users\Bilal\AppData\Local\Pub\Cache\hosted\pub.dev\vibration-1.9.0\android\src\main\java\com\benjaminabel\vibration\VibrationPlugin.java uses or overrides a deprecated API.
+  warning: [options] target value 8 is obsolete and will be removed in a future release
+  Note: Recompile with -Xlint:deprecation for details.
+  warning: [options] source value 8 is obsolete and will be removed in a future release
+  C:\Users\Bilal\AppData\Local\Pub\Cache\hosted\pub.dev\vibration-1.9.0\android\src\main\java\com\benjaminabel\vibration\VibrationPlugin.java:20: error: cannot find symbol
+      public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
+                                                                             ^
+    symbol:   class Registrar
+    location: interface PluginRegistry
+  warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+  1 error
+  3 warnings
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 11s
+Running Gradle task 'bundleRelease'...                             12,4s
+
+ÔöîÔöÇ Flutter Fix ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé [!] Consult the error logs above to identify any broken plugins, specifically those containing  Ôöé
+Ôöé "error: cannot find symbol..."                                                                  Ôöé
+Ôöé This issue is likely caused by v1 embedding removal and the plugin's continued usage of removed Ôöé
+Ôöé references to the v1 embedding.                                                                 Ôöé
+Ôöé To fix this error, please upgrade your current package's dependencies to latest versions by     Ôöé
+Ôöé running `flutter pub upgrade`.                                                                  Ôöé
+Ôöé If that does not work, please file an issue for the problematic plugin(s) here:                 Ôöé
+Ôöé https://github.com/flutter/flutter/issues                                                       Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöİ
+Gradle task bundleRelease failed with exit code 1

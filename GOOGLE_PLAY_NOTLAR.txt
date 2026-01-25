@@ -1,0 +1,91 @@
+═══════════════════════════════════════════════════════
+SAKIN SÖYLEME - GOOGLE PLAY YÜKLEME NOTLARI
+═══════════════════════════════════════════════════════
+
+📦 AAB DOSYASI:
+--------------
+Konum: build\app\outputs\bundle\release\app-release.aab
+Boyut: 39.7 MB
+Durum: ✅ Hazır
+
+
+🔑 UYGULAMA BİLGİLERİ:
+---------------------
+App ID: com.tabu.game.tabu_flutter
+İsim: Sakın Söyleme - Kelime Oyunu
+Paket Adı: com.tabu.game.tabu_flutter
+Version: 1.0.0
+Version Code: 1
+
+
+📝 STORE LİSTİNG ÖNERİLERİ:
+--------------------------
+
+KISA AÇIKLAMA (80 karakter max):
+"Eğlenceli kelime oyunu! Kelimeyi tarif et, yasaklıları kullanma!"
+
+UZUN AÇIKLAMA:
+"🎮 Sakın Söyleme - Kelime Oyunu
+
+Klasik kelime oyununu arkadaşlarınla oyna! Kelimeyi tarif et ama yasaklı kelimeleri kullanma!
+
+✨ Özellikler:
+• Yüzlerce kelime ve kategori
+• Skor takibi
+• Ses efektleri ve titreşim
+• Modern ve kullanıcı dostu arayüz
+• Tamamen Türkçe
+
+🎯 Nasıl Oynanır:
+1. Takımını seç
+2. Kelimeleri yasaklı kelimeleri kullanmadan tarif et
+3. Arkadaşların tahmin etsin
+4. En yüksek skoru elde et!
+
+Aile ve arkadaşlarınla keyifli vakit geçirmek için mükemmel! 🎉"
+
+
+📸 SCREENSHOT ÖNERİLERİ:
+-----------------------
+• Ana menü ekranı
+• Oyun ekranı (kart gösterimi)
+• Skor ekranı
+• Ayarlar ekranı
+En az 2, ideal 4-8 tane
+
+
+🏷️ KATEGORİ:
+-----------
+Oyunlar > Kelime
+
+
+📋 DOLDURULMASI GEREKENLER:
+--------------------------
+❌ Privacy Policy URL (ZORUNLU)
+⚠️ Screenshots (En az 2)
+⚠️ Kısa açıklama
+⚠️ Uzun açıklama
+⚠️ Kategori seçimi
+⚠️ İçerik derecelendirmesi anketi
+⚠️ Hedef kitle seçimi
+
+
+⚠️ ÖNEMLİ NOTLAR:
+----------------
+1. Privacy Policy olmadan yayınlayamazsın
+2. İçerik derecelendirmesi anketini doldurman gerekecek
+3. İlk inceleme 3-7 gün sürebilir
+4. Test cihazlarda dene, sonra yayınla
+
+
+🔐 KEYSTORE BİLGİLERİ:
+--------------------
+Yedek: KEYSTORE_BACKUP_2026-01-16/
+ZIP: TABU_KEYSTORE_YEDEK_2026-01-16.zip
+⚠️ BU DOSYALARI ASLA KAYBETME!
+
+
+═══════════════════════════════════════════════════════
+Oluşturma Tarihi: 2026-01-17
+Güncelleme: İsim "Sakın Söyleme" olarak değiştirildi
+═══════════════════════════════════════════════════════

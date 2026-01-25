@@ -1,0 +1,151 @@
+═══════════════════════════════════════════════════════
+SAKIN SÖYLEME - GOOGLE PLAY STORE LİSTİNG
+═══════════════════════════════════════════════════════
+
+📱 UYGULAMA ADI:
+--------------
+Sakın Söyleme - Kelime Oyunu
+
+
+🏷️ KISA AÇIKLAMA (80 karakter max):
+------------------------------------
+Eğlenceli kelime oyunu! Kelimeyi tarif et, yasaklıları kullanma!
+
+
+📝 UZUN AÇIKLAMA:
+----------------
+🎮 Sakın Söyleme - Kelime Oyunu
+
+Klasik kelime oyununu arkadaşlarınla oyna! Kelimeyi tarif et ama yasaklı kelimeleri kullanma!
+
+✨ Özellikler:
+• 🎯 Yüzlerce kelime ve kategori
+• 📊 Skor takibi ve istatistikler
+• 🔊 Ses efektleri ve titreşim desteği
+• 🎨 Modern ve kullanıcı dostu arayüz
+• 🇹🇷 Tamamen Türkçe içerik
+• 📱 Çevrimdışı oynanabilir
+• ⚡ Hızlı ve akıcı oynanış
+
+🎯 Nasıl Oynanır:
+1. Ekibi seç ve oyuna başla
+2. Ekrandaki kelimeyi yasaklı kelimeleri kullanmadan tarif et
+3. Arkadaşların tahmin etsin
+4. Doğru tahmin için puan kazan
+5. En yüksek skoru elde et!
+
+🎉 Kimler İçin:
+• Aile toplantıları için mükemmel
+• Arkadaşlarla eğlenceli vakit geçirmek isteyenler
+• Kelime oyunları sevenler
+• Her yaştan oyuncu
+
+💡 Neden Sakın Söyleme?
+• Reklamsız deneyim
+• Ücretsiz ve sınırsız oyun
+• İnternet gerektirmez
+• Kullanımı çok kolay
+• Düzenli kelime güncellemeleri
+
+İndir ve ailenle, arkadaşlarınla keyifli vakit geçir! 🎊
+
+
+🔑 ANAHTAR KELİMELER:
+--------------------
+sakın söyleme, kelime oyunu, kelime oyunları, tahmin oyunu, aile oyunu, arkadaş oyunu, parti oyunu, masa oyunu, türkçe oyun, offline oyun, word game, kelime bulmaca
+
+
+📁 KATEGORİ:
+-----------
+Ana Kategori: Oyunlar
+Alt Kategori: Kelime
+
+
+👥 HEDEF KİTLE:
+--------------
+Yaş: PEGI 3 (Herkes)
+İçerik: Genel izleyici
+
+
+📧 İLETİŞİM BİLGİLERİ:
+---------------------
+Email: tabugame.support@gmail.com
+Website/Privacy Policy: [BURAYA privacy_policy.html YÜKLENECEK]
+
+
+🎨 GÖRSEL VARLIKLAR GEREKLİ:
+---------------------------
+
+1. APP ICON:
+   ✅ Mevcut (ic_launcher)
+
+2. FEATURE GRAPHIC (İsteğe bağlı):
+   Boyut: 1024 x 500 px
+   Format: PNG veya JPG
+   İçerik: "SAKIN SÖYLEME" yazısı, renkli kartlar, oyun teması
+
+3. SCREENSHOTS (ZORUNLU - En az 2):
+   Boyut: 16:9 oran (örn: 1080x1920, 1440x2560)
+   Format: PNG veya JPG
+   
+   Önerilen ekranlar:
+   📸 Screenshot 1: Ana menü ekranı
+   📸 Screenshot 2: Oyun kartı (kelime + yasaklılar)
+   📸 Screenshot 3: Skor ekranı
+   📸 Screenshot 4: Kategori seçimi
+   📸 Screenshot 5: Oyun sonu istatistikleri
+
+
+📊 İÇERİK DERECELENDİRMESİ ANKETİ:
+---------------------------------
+
+Şiddet içeriği: HAYIR
+Cinsel içerik: HAYIR
+Uyuşturucu/Alkol: HAYIR
+Küfür/Kaba dil: HAYIR
+Kullanıcı etkileşimi: HAYIR
+Konum paylaşımı: HAYIR
+Kişisel bilgi paylaşımı: HAYIR
+Uygulama içi satın alma: HAYIR
+Reklamlar: HAYIR
+
+Sonuç: PEGI 3 / ESRB Everyone
+
+
+🌍 DİL DESTEĞİ:
+--------------
+Varsayılan: Türkçe (tr-TR)
+(İsteğe bağlı: İngilizce çevirisi eklenebilir)
+
+
+💰 FİYATLANDIRMA:
+----------------
+Ücretsiz
+Uygulama içi satın alma: Yok
+Reklamlar: Yok
+
+
+📋 YAYINLAMA ÖNCESİ KONTROL:
+---------------------------
+✅ AAB dosyası yüklendi
+✅ Privacy Policy hazır
+⚠️ Screenshots çek ve yükle (MIN 2, MAKS 8)
+⚠️ Store listing bilgileri doldur
+⚠️ İçerik derecelendirmesi tamamla
+⚠️ Hedef kitle seç
+⚠️ Fiyatlandırma/Ülkeler seç
+
+
+🎯 YAYINLAMA SONRASI:
+--------------------
+• İnceleme süresi: 3-7 gün
+• Tüm ülkelerde yayınlanacak
+• Test cihazlarında kontrol et
+• İlk yorumları takip et
+• Hata raporlarını incele
+
+
+═══════════════════════════════════════════════════════
+Not: Screenshots için uygulamayı emülatör veya gerçek
+cihazda çalıştırıp ekran görüntüsü alman gerekiyor.
+═══════════════════════════════════════════════════════
