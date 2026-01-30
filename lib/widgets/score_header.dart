@@ -5,8 +5,8 @@ import '../utils/constants.dart';
 class ScoreHeader extends StatelessWidget {
   final String team1Name;
   final String team2Name;
-  final double team1Score;
-  final double team2Score;
+  final int team1Score;
+  final int team2Score;
   final int timeLeft;
   final int totalTime;
 
@@ -52,7 +52,7 @@ class ScoreHeader extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    team1Score.toStringAsFixed(team1Score.truncateToDouble() == team1Score ? 0 : 1),
+                    team1Score.toString(),
                     style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w800,
@@ -85,7 +85,7 @@ class ScoreHeader extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    team2Score.toStringAsFixed(team2Score.truncateToDouble() == team2Score ? 0 : 1),
+                    team2Score.toString(),
                     style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w800,

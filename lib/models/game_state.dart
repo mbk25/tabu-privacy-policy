@@ -3,8 +3,8 @@ import 'word.dart';
 class GameState {
   String team1Name;
   String team2Name;
-  double team1Score;
-  double team2Score;
+  int team1Score;
+  int team2Score;
   int currentTeam;
   int roundTime;
   int targetScore;

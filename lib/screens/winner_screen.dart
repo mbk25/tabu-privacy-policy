@@ -99,7 +99,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
                             '${state.winnerName} Kazandı! 🎉',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                              fontSize: 36,
+                              fontSize: 32,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
                             ),
@@ -122,26 +122,31 @@ class _WinnerScreenState extends State<WinnerScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 // Team 1
-                                Column(
-                                  children: [
-                                    Text(
-                                      state.team1Name,
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.white,
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        state.team1Name,
+                                        textAlign: TextAlign.center,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Text(
-                                      state.team1Score.toString(),
-                                      style: const TextStyle(
-                                        fontSize: 48,
-                                        fontWeight: FontWeight.w800,
-                                        color: Colors.white,
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        state.team1Score.toString(),
+                                        style: const TextStyle(
+                                          fontSize: 48,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                                 
                                 // VS
@@ -155,26 +160,31 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                 ),
                                 
                                 // Team 2
-                                Column(
-                                  children: [
-                                    Text(
-                                      state.team2Name,
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.white,
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        state.team2Name,
+                                        textAlign: TextAlign.center,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Text(
-                                      state.team2Score.toString(),
-                                      style: const TextStyle(
-                                        fontSize: 48,
-                                        fontWeight: FontWeight.w800,
-                                        color: Colors.white,
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        state.team2Score.toString(),
+                                        style: const TextStyle(
+                                          fontSize: 48,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),

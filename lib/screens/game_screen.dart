@@ -295,7 +295,28 @@ class _GameScreenState extends State<GameScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: 8),
+                          // Mola (Pause) Butonu
+                          GestureDetector(
+                            onTap: () => gameProvider.togglePause(),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.15),
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: Colors.white.withOpacity(0.3),
+                                  width: 2,
+                                ),
+                              ),
+                              child: Icon(
+                                state.isPaused ? Icons.play_arrow_rounded : Icons.pause_rounded,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
                           // Pas hakkı göstergesi
                           if (state.passLimit < 999)
                             Container(
@@ -324,13 +345,13 @@ class _GameScreenState extends State<GameScreen> {
                         ],
                       ),
                       
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 8),
                       
                       // Word card
                       if (state.currentWord != null)
                         WordCard(word: state.currentWord!),
                       
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 20),
                       
                       // Action buttons (3 buttons)
                       Row(
@@ -371,18 +392,6 @@ class _GameScreenState extends State<GameScreen> {
               },
             ),
           ),
-        ),
-        floatingActionButton: Consumer<GameProvider>(
-          builder: (context, gameProvider, _) {
-            return FloatingActionButton(
-              onPressed: () => gameProvider.togglePause(),
-              backgroundColor: Colors.white.withOpacity(0.15),
-              child: Icon(
-                gameProvider.state.isPaused ? Icons.play_arrow : Icons.pause,
-                color: Colors.white,
-              ),
-            );
-          },
         ),
       ),
     );
