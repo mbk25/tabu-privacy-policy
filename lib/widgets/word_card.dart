@@ -107,7 +107,7 @@ class _WordCardState extends State<WordCard> with SingleTickerProviderStateMixin
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 16),
             
             // Yasaklı kelimeler başlık
             const Text(
@@ -119,7 +119,7 @@ class _WordCardState extends State<WordCard> with SingleTickerProviderStateMixin
                 letterSpacing: 1,
               ),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 12),
             
             // Yasaklı kelimeler listesi (tıklanabilir butonlar)
             ...widget.word.taboos.map((taboo) {
@@ -137,8 +137,8 @@ class _WordCardState extends State<WordCard> with SingleTickerProviderStateMixin
                   }
                 },
                 child: Container(
-                  margin: const EdgeInsets.only(bottom: 3),
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 9),
+                  margin: const EdgeInsets.only(bottom: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,

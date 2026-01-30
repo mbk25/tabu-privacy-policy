@@ -252,142 +252,155 @@ class _GameScreenState extends State<GameScreen> {
                   });
                 }
 
-                return SingleChildScrollView(
-                  physics: const ClampingScrollPhysics(),
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    children: [
-                      // Score header
-                      ScoreHeader(
-                        team1Name: state.team1Name,
-                        team2Name: state.team2Name,
-                        team1Score: state.team1Score,
-                        team2Score: state.team2Score,
-                        timeLeft: state.timeLeft,
-                        totalTime: state.roundTime,
+                return LayoutBuilder(
+                  builder: (context, constraints) {
+                    return SingleChildScrollView(
+                      physics: const NeverScrollableScrollPhysics(),
+                      padding: const EdgeInsets.all(12),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: constraints.maxHeight - 24, // subtract padding
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                // Score header
+                                ScoreHeader(
+                                  team1Name: state.team1Name,
+                                  team2Name: state.team2Name,
+                                  team1Score: state.team1Score,
+                                  team2Score: state.team2Score,
+                                  timeLeft: state.timeLeft,
+                                  totalTime: state.roundTime,
+                                ),
+                                
+                                const SizedBox(height: 14),
+                                
+                                // Current team indicator and pass counter
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: state.currentTeam == 1
+                                                ? [AppColors.primary.withOpacity(0.3), AppColors.primary.withOpacity(0.2)]
+                                                : [AppColors.secondary.withOpacity(0.3), AppColors.secondary.withOpacity(0.2)],
+                                          ),
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
+                                        child: Text(
+                                          '${state.currentTeamName} Oynuyor',
+                                          style: const TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    // Mola (Pause) Butonu
+                                    GestureDetector(
+                                      onTap: () => gameProvider.togglePause(),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.15),
+                                          borderRadius: BorderRadius.circular(12),
+                                          border: Border.all(
+                                            color: Colors.white.withOpacity(0.3),
+                                            width: 2,
+                                          ),
+                                        ),
+                                        child: Icon(
+                                          state.isPaused ? Icons.play_arrow_rounded : Icons.pause_rounded,
+                                          color: Colors.white,
+                                          size: 20,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    // Pas hakkı göstergesi
+                                    if (state.passLimit < 999)
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                        decoration: BoxDecoration(
+                                          color: state.passesLeft > 0 
+                                              ? AppColors.warning.withOpacity(0.3)
+                                              : AppColors.danger.withOpacity(0.3),
+                                          borderRadius: BorderRadius.circular(12),
+                                          border: Border.all(
+                                            color: state.passesLeft > 0 
+                                                ? AppColors.warning
+                                                : AppColors.danger,
+                                            width: 2,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          '→ ${state.passesLeft}',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color: state.passesLeft > 0 ? Colors.white : AppColors.danger,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            
+                            const SizedBox(height: 8),
+                            
+                            // Word card
+                            if (state.currentWord != null)
+                              WordCard(word: state.currentWord!),
+                            
+                            const SizedBox(height: 10),
+                            
+                            // Action buttons (3 buttons)
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: CustomButton(
+                                    text: '✓',
+                                    onPressed: () => gameProvider.correctAnswer(),
+                                    type: ButtonType.success,
+                                    isLarge: true,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: CustomButton(
+                                    text: '✕',
+                                    onPressed: () => gameProvider.tabuPenalty(),
+                                    type: ButtonType.danger,
+                                    isLarge: true,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: CustomButton(
+                                    text: '→',
+                                    onPressed: () => gameProvider.wrongAnswer(),
+                                    type: ButtonType.warning,
+                                    isLarge: true,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            
+                            const SizedBox(height: 10),
+                          ],
+                        ),
                       ),
-                      
-                      const SizedBox(height: 14),
-                      
-                      
-                      // Current team indicator and pass counter
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: state.currentTeam == 1
-                                      ? [AppColors.primary.withOpacity(0.3), AppColors.primary.withOpacity(0.2)]
-                                      : [AppColors.secondary.withOpacity(0.3), AppColors.secondary.withOpacity(0.2)],
-                                ),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Text(
-                                '${state.currentTeamName} Oynuyor',
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          // Mola (Pause) Butonu
-                          GestureDetector(
-                            onTap: () => gameProvider.togglePause(),
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.15),
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(
-                                  color: Colors.white.withOpacity(0.3),
-                                  width: 2,
-                                ),
-                              ),
-                              child: Icon(
-                                state.isPaused ? Icons.play_arrow_rounded : Icons.pause_rounded,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          // Pas hakkı göstergesi
-                          if (state.passLimit < 999)
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              decoration: BoxDecoration(
-                                color: state.passesLeft > 0 
-                                    ? AppColors.warning.withOpacity(0.3)
-                                    : AppColors.danger.withOpacity(0.3),
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(
-                                  color: state.passesLeft > 0 
-                                      ? AppColors.warning
-                                      : AppColors.danger,
-                                  width: 2,
-                                ),
-                              ),
-                              child: Text(
-                                '→ ${state.passesLeft}',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700,
-                                  color: state.passesLeft > 0 ? Colors.white : AppColors.danger,
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                      
-                      const SizedBox(height: 8),
-                      
-                      // Word card
-                      if (state.currentWord != null)
-                        WordCard(word: state.currentWord!),
-                      
-                      const SizedBox(height: 20),
-                      
-                      // Action buttons (3 buttons)
-                      Row(
-                        children: [
-                          Expanded(
-                            child: CustomButton(
-                              text: '✓',
-                              onPressed: () => gameProvider.correctAnswer(),
-                              type: ButtonType.success,
-                              isLarge: true,
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: CustomButton(
-                              text: '✕',
-                              onPressed: () => gameProvider.tabuPenalty(),
-                              type: ButtonType.danger,
-                              isLarge: true,
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: CustomButton(
-                              text: '→',
-                              onPressed: () => gameProvider.wrongAnswer(),
-                              type: ButtonType.warning,
-                              isLarge: true,
-                            ),
-                          ),
-                        ],
-                      ),
-                      
-                      const SizedBox(height: 20),
-                    ],
-                  ),
+                    );
+                  },
                 );
               },
             ),
