@@ -3,8 +3,8 @@ import 'word.dart';
 class GameState {
   String team1Name;
   String team2Name;
-  int team1Score;
-  int team2Score;
+  double team1Score;
+  double team2Score;
   int currentTeam;
   int roundTime;
   int targetScore;
@@ -21,8 +21,8 @@ class GameState {
   GameState({
     this.team1Name = 'Takım 1',
     this.team2Name = 'Takım 2',
-    this.team1Score = 0,
-    this.team2Score = 0,
+    this.team1Score = 0.0,
+    this.team2Score = 0.0,
     this.currentTeam = 1,
     this.roundTime = 60,
     this.targetScore = 30,
@@ -38,8 +38,8 @@ class GameState {
   }) : passesLeft = passesLeft ?? passLimit;
 
   void reset() {
-    team1Score = 0;
-    team2Score = 0;
+    team1Score = 0.0;
+    team2Score = 0.0;
     currentTeam = 1;
     passesLeft = passLimit;
     timeLeft = roundTime;

@@ -159,9 +159,16 @@ class GameProvider with ChangeNotifier {
     loadNewWord();
   }
 
-  // Yasaklı kelime söyletme - ses/titreşim feedback (puan yok)
+  // Yasaklı kelime söyletme - puan (+0.1) ve titreşim feedback
   void tabooWordPenalty() {
     if (_state.timeLeft <= 0 || _state.currentWord == null) return;
+
+    // Puan ekle (+0.1)
+    if (_state.currentTeam == 1) {
+      _state.team1Score += 0.1;
+    } else {
+      _state.team2Score += 0.1;
+    }
 
     // Hafif titreşim (feedback)
     if (_state.vibrationEnabled) {

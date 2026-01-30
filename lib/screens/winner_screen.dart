@@ -31,6 +31,13 @@ class _WinnerScreenState extends State<WinnerScreen> {
     super.dispose();
   }
 
+  String _formatScore(double score) {
+    if (score == score.toInt().toDouble()) {
+      return score.toInt().toString();
+    }
+    return score.toStringAsFixed(1);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,7 +145,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                       ),
                                       const SizedBox(height: 8),
                                       Text(
-                                        state.team1Score.toString(),
+                                        _formatScore(state.team1Score),
                                         style: const TextStyle(
                                           fontSize: 48,
                                           fontWeight: FontWeight.w800,
@@ -176,7 +183,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                       ),
                                       const SizedBox(height: 8),
                                       Text(
-                                        state.team2Score.toString(),
+                                        _formatScore(state.team2Score),
                                         style: const TextStyle(
                                           fontSize: 48,
                                           fontWeight: FontWeight.w800,
