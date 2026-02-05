@@ -74,6 +74,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
               Consumer<GameProvider>(
                 builder: (context, gameProvider, _) {
                   final state = gameProvider.state;
+                  final isTie = state.isTie;
                   
                   return Center(
                     child: SingleChildScrollView(
@@ -81,7 +82,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // Trophy animation
+                          // Trophy/Tie animation
                           TweenAnimationBuilder(
                             tween: Tween<double>(begin: 0, end: 1),
                             duration: const Duration(milliseconds: 1000),
@@ -90,9 +91,9 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                 scale: value,
                                 child: Transform.rotate(
                                   angle: (1 - value) * 0.5,
-                                  child: const Text(
-                                    '🏆',
-                                    style: TextStyle(fontSize: 120),
+                                  child: Text(
+                                    isTie ? '🤝' : '🏆',
+                                    style: const TextStyle(fontSize: 120),
                                   ),
                                 ),
                               );
@@ -101,9 +102,9 @@ class _WinnerScreenState extends State<WinnerScreen> {
                           
                           const SizedBox(height: 40),
                           
-                          // Winner title
+                          // Winner/Tie title
                           Text(
-                            '${state.winnerName} Kazandı! 🎉',
+                            isTie ? 'Berabere! 🎭' : '${state.winnerName} Kazandı! 🎉',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               fontSize: 32,

@@ -29,9 +29,11 @@ class ScoreHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    
     return RepaintBoundary(
       child: Container(
-        padding: const EdgeInsets.all(14),
+        padding: EdgeInsets.all(screenWidth * 0.035),
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.1),
           borderRadius: BorderRadius.circular(20),
@@ -50,18 +52,18 @@ class ScoreHeader extends StatelessWidget {
                 children: [
                   Text(
                     team1Name,
-                    style: const TextStyle(
-                      fontSize: 12,
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.03, // Responsive font size
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: screenWidth * 0.01),
                   Text(
                     _formatScore(team1Score),
-                    style: const TextStyle(
-                      fontSize: 26,
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.065, // Responsive font size
                       fontWeight: FontWeight.w800,
                       color: Colors.white,
                     ),
@@ -83,18 +85,18 @@ class ScoreHeader extends StatelessWidget {
                 children: [
                   Text(
                     team2Name,
-                    style: const TextStyle(
-                      fontSize: 12,
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.03, // Responsive font size
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: screenWidth * 0.01),
                   Text(
                     _formatScore(team2Score),
-                    style: const TextStyle(
-                      fontSize: 26,
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.065, // Responsive font size
                       fontWeight: FontWeight.w800,
                       color: Colors.white,
                     ),

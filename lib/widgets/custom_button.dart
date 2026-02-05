@@ -77,6 +77,9 @@ class _CustomButtonState extends State<CustomButton> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    
     return GestureDetector(
       onTapDown: (_) => setState(() => _isPressed = true),
       onTapUp: (_) {
@@ -88,9 +91,10 @@ class _CustomButtonState extends State<CustomButton> {
         scale: _isPressed ? 0.96 : 1.0,
         duration: const Duration(milliseconds: 80),
         child: Container(
+          height: screenHeight * 0.07, // Responsive height
           padding: EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: widget.isLarge ? 14 : 12,
+            horizontal: screenWidth * 0.04,
+            vertical: screenHeight * 0.01,
           ),
           decoration: BoxDecoration(
             gradient: _getGradient(),
@@ -108,12 +112,12 @@ class _CustomButtonState extends State<CustomButton> {
             children: [
               if (widget.icon != null) ...[
                 widget.icon!,
-                const SizedBox(width: 12),
+                SizedBox(width: screenWidth * 0.03),
               ],
               Text(
                 widget.text,
                 style: TextStyle(
-                  fontSize: widget.isLarge ? 15 : 14,
+                  fontSize: screenWidth * 0.04, // Responsive font size
                   fontWeight: FontWeight.w600,
                   color: _getTextColor(),
                   letterSpacing: 0.3,

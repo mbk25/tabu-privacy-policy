@@ -254,12 +254,15 @@ class _GameScreenState extends State<GameScreen> {
 
                 return LayoutBuilder(
                   builder: (context, constraints) {
+                    final screenHeight = MediaQuery.of(context).size.height;
+                    final screenWidth = MediaQuery.of(context).size.width;
+                    
                     return SingleChildScrollView(
                       physics: const NeverScrollableScrollPhysics(),
-                      padding: const EdgeInsets.all(12),
+                      padding: EdgeInsets.all(screenWidth * 0.03),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                          minHeight: constraints.maxHeight - 24, // subtract padding
+                          minHeight: constraints.maxHeight - (screenWidth * 0.06), // subtract padding
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -276,12 +279,33 @@ class _GameScreenState extends State<GameScreen> {
                                   totalTime: state.roundTime,
                                 ),
                                 
-                                const SizedBox(height: 14),
+                                SizedBox(height: screenHeight * 0.018),
                                 
                                 // Current team indicator and pass counter
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
+                                    // Tur numarası göstergesi
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withOpacity(0.15),
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.white.withOpacity(0.3),
+                                          width: 2,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Tur ${state.currentRound}',
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
                                     Expanded(
                                       child: Container(
                                         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

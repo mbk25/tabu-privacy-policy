@@ -29,6 +29,9 @@ class _TeamSetupScreenState extends State<TeamSetupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -40,7 +43,10 @@ class _TeamSetupScreenState extends State<TeamSetupScreen> {
           bottom: false,
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.05, 
+              vertical: screenHeight * 0.015
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,28 +59,28 @@ class _TeamSetupScreenState extends State<TeamSetupScreen> {
                   ),
                 ),
                 
-                const SizedBox(height: 8),
+                SizedBox(height: screenHeight * 0.01),
                 
                 // Title
                 Center(
                   child: Text(
                     'Takım Kurulumu',
                     style: GoogleFonts.poppins(
-                      fontSize: 22,
+                      fontSize: screenWidth * 0.055, // Responsive font size
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
                     ),
                   ),
                 ),
                 
-                const SizedBox(height: 16),
+                SizedBox(height: screenHeight * 0.02),
                 
                 // Team inputs
                 _buildInput('Takım 1 Adı', _team1Controller),
-                const SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.015),
                 _buildInput('Takım 2 Adı', _team2Controller),
                 
-                const SizedBox(height: 16),
+                SizedBox(height: screenHeight * 0.02),
                 
                 // Round time
                 _buildSlider(

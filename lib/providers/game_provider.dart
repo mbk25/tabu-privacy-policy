@@ -104,12 +104,7 @@ class GameProvider with ChangeNotifier {
       _vibrate(100);
     }
 
-    // Kazanan kontrolü
-    if (_state.hasWinner) {
-      endGame();
-      return;
-    }
-
+    // Tur sonunda kazanan kontrolü yapılacak, burada bitmeyecek
     // Yeni kelime
     loadNewWord();
   }
@@ -181,7 +176,13 @@ class GameProvider with ChangeNotifier {
   // Turu bitir
   void endRound() {
     _timer?.cancel();
-    _state.switchTeam();
+    _state.switchTeam(); // Bu hem takımı değiştirir hem de tur sayacını artırır
+    
+    // Turlar eşit ve oyun bitmeli mi kontrol et
+    if (_state.shouldEndGame) {
+      endGame();
+      return;
+    }
     
     // UI'ya bildirip dialog göstermesi için callback çağır
     if (onRoundEnd != null) {
@@ -191,7 +192,7 @@ class GameProvider with ChangeNotifier {
   
   // Kullanıcı onayından sonra yeni tura geç
   void continueToNextRound() {
-    if (_state.isPlaying && !_state.hasWinner) {
+    if (_state.isPlaying && !_state.gameEnded) {
       startRound();
     }
   }
@@ -206,6 +207,7 @@ class GameProvider with ChangeNotifier {
   void endGame() {
     _timer?.cancel();
     _state.isPlaying = false;
+    _state.gameEnded = true; // Oyun bitti flag'ini set et
     notifyListeners();
   }
 

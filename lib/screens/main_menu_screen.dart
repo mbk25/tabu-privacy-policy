@@ -11,6 +11,9 @@ class MainMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -19,11 +22,14 @@ class MainMenuScreen extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth * 0.05,
+                vertical: screenHeight * 0.02,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 60),
+                  SizedBox(height: screenHeight * 0.05),
                   
                   // Logo & Title
                   ShaderMask(
@@ -33,30 +39,33 @@ class MainMenuScreen extends StatelessWidget {
                       'SAKIN\nSÖYLEME',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                        fontSize: 56,
+                        fontSize: screenWidth * 0.12, // Responsive font size
                         fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
+                        letterSpacing: 2,
                         color: Colors.white,
                         height: 1.1,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: screenHeight * 0.01),
                   Text(
                     'KELİME OYUNU',
                     style: GoogleFonts.poppins(
-                      fontSize: 18,
+                      fontSize: screenWidth * 0.04, // Responsive font size
                       fontWeight: FontWeight.w600,
-                      letterSpacing: 4,
+                      letterSpacing: 2,
                       color: Colors.white.withOpacity(0.9),
                     ),
                   ),
                   
-                  const SizedBox(height: 60),
+                  SizedBox(height: screenHeight * 0.08),
                   
                   // Menu Buttons
                   Container(
-                    constraints: const BoxConstraints(maxWidth: 400),
+                    constraints: BoxConstraints(
+                      maxWidth: screenWidth * 0.9,
+                      minWidth: screenWidth * 0.7,
+                    ),
                     child: Column(
                       children: [
                         CustomButton(
@@ -71,7 +80,7 @@ class MainMenuScreen extends StatelessWidget {
                           },
                           type: ButtonType.primary,
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: screenHeight * 0.02),
                         CustomButton(
                           text: '📖 Kurallar',
                           onPressed: () {
@@ -84,7 +93,7 @@ class MainMenuScreen extends StatelessWidget {
                           },
                           type: ButtonType.secondary,
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: screenHeight * 0.02),
                         CustomButton(
                           text: '⚙️ Ayarlar',
                           onPressed: () {

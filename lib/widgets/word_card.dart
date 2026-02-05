@@ -47,10 +47,13 @@ class _WordCardState extends State<WordCard> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    
     return FadeTransition(
       opacity: _animation,
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(screenWidth * 0.03),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -79,7 +82,7 @@ class _WordCardState extends State<WordCard> with SingleTickerProviderStateMixin
           children: [
             // Ana kelime
             Container(
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(screenWidth * 0.025),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -99,23 +102,23 @@ class _WordCardState extends State<WordCard> with SingleTickerProviderStateMixin
               child: Text(
                 widget.word.word,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 24,
+                style: TextStyle(
+                  fontSize: screenWidth * 0.06, // Responsive font size
                   fontWeight: FontWeight.w800,
                   color: AppColors.primary,
                   letterSpacing: 1,
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: screenHeight * 0.02),
             
             // Yasaklı kelimeler başlık
-            const Text(
+            Text(
               'Yasaklı Kelimeler:',
               style: TextStyle(
-                fontSize: 11,
+                fontSize: screenWidth * 0.03, // Responsive font size
                 fontWeight: FontWeight.w700,
-                color: Color(0xFF1a1a1a),
+                color: const Color(0xFF1a1a1a),
                 letterSpacing: 1,
               ),
             ),
